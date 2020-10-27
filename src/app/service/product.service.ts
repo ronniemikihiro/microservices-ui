@@ -1,0 +1,36 @@
+import { Product } from './../product/product';
+import { PageProduct } from './../product/page-product';
+import { Util } from '../util/util';
+import { environment } from '../../environments/environment';
+import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ProductService {
+
+  url: string = environment.apiURLBase + '/product/product';
+
+  constructor(private http: HttpClient) { }
+
+  list(page, size): Observable<PageProduct> {
+    const params = new HttpParams().set('page', page).set('size', size);
+    return this.http.get<any>(`${this.url}?${params.toString()}`);
+  }
+
+  findById(id: number) : Observable<Product> {
+    return this.http.get<Product>(`${this.url}/${id}`);
+  }
+  
+  save(product: Product) : Observable<Product> {
+    return Util.isEmpty(product.id) ? this.http.post<Product>(this.url, product)
+      : this.http.put<Product>(this.url, product);
+  }
+
+  delete(id: number) : Observable<any> {
+    return this.http.delete<any>(`${this.url}/${id}`);
+  }
+  
+}

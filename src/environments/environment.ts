@@ -5,9 +5,9 @@
 export const environment = {
   production: false,
   apiURLBase: 'http://localhost:8080/gateway',
-  clientId: 'my-angular-app',
-  clientSecret: '@321',
-  obterTokenUrl: '/auth/login'
+  clientId: 'esales',
+  clientSecret: '@123',
+  obterTokenUrl: '/auth/oauth/token'
 };
 
 /*

@@ -1,0 +1,50 @@
+<div class="full-width" style="text-align: center; margin-top: 20px;">
+    <mat-card-title>List Products</mat-card-title>
+</div>
+
+<div style="position: absolute; width: 95%; text-align: right; top: 75px;">
+    <button mat-mini-fab color="primary" matTooltip="Click to add new Product" 
+        routerLink="/products/form"
+        style="margin-right: 10px;">
+        <mat-icon>add_circle</mat-icon>
+    </button>
+</div>
+
+<br/>
+
+<table mat-table [dataSource]="listProducts" class="mat-elevation-z8" >
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef >ID</th>
+        <td mat-cell *matCellDef="let product"> {{ product.id }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let product" >{{ product.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let product">
+            <button mat-mini-fab color="primary" matTooltip="Click to Edit" 
+                    style="margin-right: 10px;" routerLink="/products/form/{{ product.id }}">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-mini-fab color="warn" matTooltip="Click to Delete"
+                (click)="confirmDialogDelete(product)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+</table>
+
+<mat-paginator [length]="totalElements"
+            [pageSize]="5" 
+            [pageSizeOptions]="[5, 10, 20]" 
+            (page)="paginator($event)"
+            style="width: 95%;">
+</mat-paginator>

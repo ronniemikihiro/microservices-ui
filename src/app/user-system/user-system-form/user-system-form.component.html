@@ -1,0 +1,47 @@
+<div class="full-width" style="text-align: center; margin-top: 20px;">
+    <mat-card-title>{{ modeEdit ? 'Edit' : 'New'}} User</mat-card-title>
+</div>
+
+<mat-card>
+    <mat-card-content>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="Name" required name="input_name"
+                        [(ngModel)]="userSystem.name" #input_name="ngModel">
+                <mat-error *ngIf="input_name.invalid">Name is required field</mat-error>
+                <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>  
+           <mat-form-field>
+                <input matInput placeholder="Email" required name="input_email"
+                        [(ngModel)]="userSystem.email" #input_email="ngModel">
+                <mat-error *ngIf="input_email.invalid">Email is required field</mat-error>
+                <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+            <mat-form-field *ngIf="!modeEdit">
+                <input matInput placeholder="Password" type="password" required name="input_password"
+                        [(ngModel)]="userSystem.password" #input_password="ngModel" maxlength="6">
+                <mat-error *ngIf="input_password.invalid">Password is required field</mat-error>
+                <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Role</mat-label>
+                <mat-select required name="input_role" [(ngModel)]="idRoleSelected" #input_role="ngModel">
+                  <mat-option *ngFor="let role of listRoles" [value]="role.id">
+                    {{role.description}}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="input_role.invalid">Role is required field</mat-error>
+            </mat-form-field>
+            <div style="text-align: right; margin-right: 10%;">
+                <button type="button" mat-raised-button color="primary" style="margin-right: 10px;"
+                    (click)="saveUserSystem()" matTooltip="Click to Save User System">
+                    Save
+                </button>
+                <button type="button" mat-raised-button routerLink="/user-systems/list"
+                    matTooltip="Click to Cancel">
+                    Cancel
+                </button>
+            </div>
+        </form>
+      </mat-card-content>
+  </mat-card>

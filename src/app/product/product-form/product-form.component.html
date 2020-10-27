@@ -1,0 +1,26 @@
+<div class="full-width" style="text-align: center; margin-top: 20px;">
+    <mat-card-title>{{ modeEdit ? 'Edit' : 'New'}} Product</mat-card-title>
+</div>
+
+<mat-card>
+    <mat-card-content>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="Name" required name="input_name"
+                        [(ngModel)]="product.name" #input_name="ngModel">
+                <mat-error *ngIf="input_name.invalid">Name is required field</mat-error>
+                <mat-icon matSuffix>all_inbox</mat-icon>
+            </mat-form-field>
+            <div style="text-align: right; margin-right: 10%;">
+                <button type="button" mat-raised-button color="primary" style="margin-right: 10px;"
+                    (click)="saveProduct()" matTooltip="Click to Save Product">
+                    Save
+                </button>
+                <button type="button" mat-raised-button routerLink="/products/list"
+                    matTooltip="Click to Cancel">
+                    Cancel
+                </button>
+            </div>
+        </form>
+      </mat-card-content>
+  </mat-card>

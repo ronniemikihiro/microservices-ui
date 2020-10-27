@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+    <span><mat-icon>eco</mat-icon> Microservices</span>
+    
+    <div class="spacer"></div>
+
+    <a mat-button routerLink="/home"><mat-icon>home</mat-icon>Home</a>
+
+    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon>Menu</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/user-systems"><mat-icon>account_circle</mat-icon>User</button>
+        <button mat-menu-item routerLink="/products"><mat-icon>all_inbox</mat-icon>Product</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="menuUserLogin" matTooltip="{{ userAuthenticated }}"><mat-icon>account_circle</mat-icon></button>
+    <mat-menu #menuUserLogin="matMenu">
+        <button mat-menu-item><mat-icon>account_circle</mat-icon>{{ userAuthenticated }}</button>
+        <div style="text-align: center;">
+            <button mat-raised-button (click)="logout()" color="accent" style="width: 95%;"><mat-icon>login</mat-icon>Sign up</button>
+        </div>
+    </mat-menu>
+
+</mat-toolbar>
