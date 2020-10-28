@@ -1,4 +1,4 @@
-import { UserSystem } from './user-system';
+import { UserSystem } from '../user-system';
 
 export class PageUserSystem {
     content: UserSystem[];

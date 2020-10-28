@@ -1,10 +1,10 @@
 import { Util } from './../util/util';
-import { UserSystem } from './../user-system/user-system';
+import { UserSystem } from '../entities/user-system';
 import { environment } from './../../environments/environment';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { PageUserSystem } from '../user-system/page-user-system';
+import { PageUserSystem } from '../entities/paginator/page-user-system';
 
 @Injectable({
   providedIn: 'root'

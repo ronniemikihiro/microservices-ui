@@ -1,10 +1,10 @@
-import { RequiredFieldError } from './../../error/required-field-error';
-import { Util } from './../../util/util';
+import { RequiredFieldError } from '../../../error/required-field-error';
+import { Util } from '../../../util/util';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { ProductService } from './../../service/product.service';
-import { Product } from './../product';
+import { ProductService } from '../../../service/product.service';
+import { Product } from '../../../entities/product';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

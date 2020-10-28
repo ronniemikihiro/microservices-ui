@@ -1,11 +1,12 @@
-import { ConfirmDialogModel, ConfirmDialogComponent } from './../../confirm-dialog/confirm-dialog.component';
-import { PageEvent } from '@angular/material/paginator';
+import { ConfirmDialogModel, ConfirmDialogComponent } from '../../../layout/confirm-dialog/confirm-dialog.component';
 import { ToastrService } from 'ngx-toastr';
-import { ProductService } from './../../service/product.service';
-import { Product } from './../product';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { PageEvent } from '@angular/material/paginator';
+
+import { ProductService } from './../../../service/product.service';
+import { Product } from './../../../entities/product';
 
 @Component({
   selector: 'app-product-list',

@@ -1,10 +1,10 @@
-import { Product } from './../product/product';
-import { PageProduct } from './../product/page-product';
+import { Product } from '../entities/product';
 import { Util } from '../util/util';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { PageProduct } from '../entities/paginator/page-product';
 
 @Injectable({
   providedIn: 'root'

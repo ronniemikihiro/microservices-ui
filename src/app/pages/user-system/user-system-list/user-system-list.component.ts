@@ -1,11 +1,12 @@
 import { ToastrService } from 'ngx-toastr';
-import { ConfirmDialogModel, ConfirmDialogComponent } from './../../confirm-dialog/confirm-dialog.component';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PageEvent } from '@angular/material/paginator';
-import { UserSystem } from '../user-system';
-import { UserSystemService } from './../../service/user-system.service';
 import { MatDialog } from '@angular/material/dialog';
+
+import { UserSystem } from './../../../entities/user-system';
+import { UserSystemService } from './../../../service/user-system.service';
+import { ConfirmDialogModel, ConfirmDialogComponent } from '../../../layout/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-user-system-list',

@@ -12,7 +12,7 @@
             <mat-form-field>
               <input matInput placeholder="Password" type="password" required
                      minlength="3" maxlength="10" name="input_password" [(ngModel)]="password"
-                     #input_password="ngModel">
+                     #input_password="ngModel" (keydown.enter)="login()">
                 <mat-error *ngIf="input_password.errors && input_password.errors.required">
                   Password is required field
                 </mat-error>

@@ -1,10 +1,11 @@
-import { RequiredFieldError } from '../error/required-field-error';
-import { Util } from 'src/app/util/util';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../security/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ToastrService } from 'ngx-toastr';
+
+import { RequiredFieldError } from './../../error/required-field-error';
+import { AuthService } from './../../security/auth.service';
+import { Util } from 'src/app/util/util';
 
 @Component({
   selector: 'app-login',

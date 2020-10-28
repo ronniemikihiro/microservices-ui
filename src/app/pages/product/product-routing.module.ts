@@ -1,38 +1,38 @@
-import { UserSystemListComponent } from './user-system-list/user-system-list.component';
-import { UserSystemFormComponent } from './user-system-form/user-system-form.component';
-import { AuthGuard } from './../security/auth.guard';
-import { LayoutComponent } from './../layout/layout.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductFormComponent } from './product-form/product-form.component';
+import { LayoutComponent } from '../../layout/layout.component';
+import { AuthGuard } from '../../security/auth.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { 
-    path: 'user-systems',
+    path: 'products',
     component: LayoutComponent, 
     canActivate: [AuthGuard], 
     canActivateChild: [AuthGuard], 
     children: [
       { 
         path: 'list', 
-        component: UserSystemListComponent, 
+        component: ProductListComponent, 
         data: { roles: ['ADMIN'] } 
       },
       { 
         path: 'form', 
-        component: UserSystemFormComponent,
+        component: ProductFormComponent,
         data: { roles: ['ADMIN'] } 
       },
       { 
         path: 'form/:id', 
-        component: UserSystemFormComponent,
+        component: ProductFormComponent,
         data: { roles: ['ADMIN'] } 
       },
       { 
         path: '', 
-        redirectTo: '/user-systems/list', 
+        redirectTo: '/products/list', 
         pathMatch: 'full' 
       }
-    ]
+    ],
   }
 ];
 
@@ -40,4 +40,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class UserSystemRoutingModule { }
+export class ProductRoutingModule { }

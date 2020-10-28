@@ -1,12 +1,13 @@
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { RequiredFieldError } from '../../error/required-field-error';
-import { UserSystemService } from './../../service/user-system.service';
-import { ToastrService } from 'ngx-toastr';
-import { RoleService } from './../../service/role.service';
 import { Component, OnInit } from '@angular/core';
-import { Role } from '../role';
-import { UserSystem } from '../user-system';
+
+import { RequiredFieldError } from './../../../error/required-field-error';
+import { UserSystemService } from './../../../service/user-system.service';
+import { RoleService } from './../../../service/role.service';
+import { ToastrService } from 'ngx-toastr';
+import { Role } from './../../../entities/role';
+import { UserSystem } from './../../../entities/user-system';
 import { Util } from 'src/app/util/util';
 
 @Component({

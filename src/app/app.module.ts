@@ -6,9 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
-import { TemplateModule } from './template/template.module';
-import { UserSystemModule } from './user-system/user-system.module';
-import { ProductModule } from './product/product.module';
+import { TemplateModule } from './layout/template/template.module';
+import { UserSystemModule } from './pages/user-system/user-system.module';
+import { ProductModule } from './pages/product/product.module';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -23,10 +23,10 @@ import { AuthService } from './security/auth.service';
 import { TokenInterceptor } from './security/token.interceptor';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './layout/layout.component';
-import { HomeComponent } from './home/home.component';
-import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ConfirmDialogComponent } from './layout/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
